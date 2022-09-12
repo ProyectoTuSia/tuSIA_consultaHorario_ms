@@ -1,9 +1,7 @@
-from distutils.log import error
 from pymongo import MongoClient
 import json
 from bson import json_util, ObjectId
 from bson.json_util import dumps
-from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -14,7 +12,7 @@ from schedule.serializers import ScheduleSerializer
 
 from . import utils
 
-# Create your views here.
+
 
 @api_view(['GET','PUT'])
 def CRUDschedule(request,userId):
@@ -47,18 +45,3 @@ def CRUDschedule(request,userId):
         # schedule_serializer = ScheduleSerializer(schedule_data)
         schedule_json = json.loads(json_util.dumps(schedule_data))
         return Response({'data':schedule_json})
-
-
-        # dbResponse = utils.get_db_handle()
-
-        # schedules = dbResponse[1]
-        # client = dbResponse[2]
-
-        # details = schedules.find_one({"userId":userId})
-        #     # if details:
-        #     #     pass
-        # print(type(details))
-        # d_js = json.loads(json_util.dumps(details))
-        # client.close()
-
-        # return Response({'data':d_js})
