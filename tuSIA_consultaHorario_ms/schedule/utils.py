@@ -6,6 +6,8 @@ def get_db_handle():
 
  client = MongoClient('mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority')
 #define DB name
+
+# mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority
  dbname = client['tuSIA_consultaHorario_db']
  #define DB collection
  collection = dbname['schedules']

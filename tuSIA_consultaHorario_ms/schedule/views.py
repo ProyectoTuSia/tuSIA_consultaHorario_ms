@@ -16,16 +16,22 @@ from . import utils
 
 @api_view(['GET','PUT'])
 def CRUDschedule(request,userId):
-    client = MongoClient()
-    schedule_collection = client["tuSIA_consultaHorario_db"]["schedule"]
+    #local connection
+    # client = MongoClient()
+    # schedule_collecion = client["tuSIA_consultaHorario_db"]["schedule"]
 
-    schedule_data = schedule_collection.objects.find_one({'userId' : userId})
+    # remote connection
+    utils_data = utils.get_db_handle()
+    schedule_collection = utils_data[1]
+    client = utils_data[2]
+
+    schedule_data = schedule_collection.find_one({'userId' : userId})
 
     if request.method == 'PUT':
 
         if not(schedule_data):
             try:
-                schedule_collection.objects.insert_one(request.data)
+                schedule_collection.insert_one(request.data)
                 # return Response({"message": "Schedule added into the DB!")
             except :
                 return Response({"message": "Something went wrong insterting data", "status": Response.status_code})
@@ -34,7 +40,7 @@ def CRUDschedule(request,userId):
         
         else:
             try:
-                schedule_collection.objects.replace_one({'userId':userId},request.data)
+                schedule_collection.replace_one({'userId':userId},request.data)
             except:
                 return Response({"message": "Something went wrong", "status": Response.status_code})
 
