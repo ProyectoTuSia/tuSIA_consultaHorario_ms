@@ -27,10 +27,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8081',
+)
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'corsheaders',
+    'schedule.apps.ScheduleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +48,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,9 +85,22 @@ WSGI_APPLICATION = 'tuSIA_consultaHorario_ms.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'tuSIA_consultaHorario_db',
+        'HOST': '127.0.0.1',
+        'PORT': 27017,
     }
+    # 'default': {
+    #     'ENGINE': 'djongo',
+    #     'CLIENT':{
+    #         'name': 'tuSIA_consultaHorario_db',
+    #         'host': 'mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority',
+    #        "username": 'jurinconor',
+    #        "password": '0phnex3dqApDiMuP',
+    #        "authMechanism": "SCRAM-SHA-1",
+    #     },
+    # }
+
 }
 
 
