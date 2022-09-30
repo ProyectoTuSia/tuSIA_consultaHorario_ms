@@ -27,13 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
-    '127.0.0.1'
+    '127.0.0.1',
+    '127.0.0.2',
+    '127.0.0.3'
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8081',
-)
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = ()
 
 
 # Application definition
@@ -90,8 +90,9 @@ DATABASES = {
     # 'default': {
     #     'ENGINE': 'djongo',
     #     'NAME': 'tuSIA_consultaHorario_db',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': 27017,
+    #     'CLIENT': {
+    #         'host': 'mongodb://172.17.0.2:27017'
+    #     }
     # }
     'default': {
         'ENGINE': 'djongo',
