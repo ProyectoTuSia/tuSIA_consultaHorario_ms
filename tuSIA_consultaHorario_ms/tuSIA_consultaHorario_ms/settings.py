@@ -27,9 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
-    '127.0.0.1',
-    '127.0.0.2',
-    '127.0.0.3'
+    '127.0.0.1'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -87,23 +85,23 @@ WSGI_APPLICATION = 'tuSIA_consultaHorario_ms.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'djongo',
-    #     'NAME': 'tuSIA_consultaHorario_db',
-    #     'CLIENT': {
-    #         'host': 'mongodb://172.17.0.2:27017'
-    #     }
-    # }
     'default': {
         'ENGINE': 'djongo',
-        'CLIENT':{
-            'name': 'tuSIA_consultaHorario_db',
-            'host': 'mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority',
-           "username": 'jurinconor',
-           "password": '0phnex3dqApDiMuP',
-           "authMechanism": "SCRAM-SHA-1",
-        },
+        'NAME': 'tuSIA_consultaHorario_db',
+        'CLIENT': {
+            'host': 'mongodb://172.17.0.2:27017'
+        }
     }
+    # 'default': {
+    #     'ENGINE': 'djongo',
+    #     'CLIENT':{
+    #         'name': 'tuSIA_consultaHorario_db',
+    #         'host': 'mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority',
+    #        "username": 'jurinconor',
+    #        "password": '0phnex3dqApDiMuP',
+    #        "authMechanism": "SCRAM-SHA-1",
+    #     },
+    # }
 
 }
 
