@@ -40,7 +40,7 @@ def CRUDschedule(request,userId):
         
         else:
             try:
-                print(userId)
+                print(request.data)
                 schedule_collection.replace_one({'userId':userId},request.data)
             except Exception as inst:
 
