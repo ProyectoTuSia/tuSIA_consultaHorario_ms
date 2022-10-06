@@ -40,6 +40,7 @@ def CRUDschedule(request,userId):
         
         else:
             try:
+                print(userId)
                 schedule_collection.replace_one({'userId':userId},request.data)
             except:
                 return Response({"message": "Something went wrong", "status": Response.status_code})
