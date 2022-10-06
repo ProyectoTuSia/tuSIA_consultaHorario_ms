@@ -42,7 +42,7 @@ def CRUDschedule(request,userId):
             try:
                 print(request.data)
                 currentSchedule = json.loads(json_util.dumps(schedule_data))
-                schedule_collection.replace_one({'userId':userId},currentSchedule)
+                schedule_collection.replace_one({'userId':userId},request.data)
 
             except Exception as inst:
 
