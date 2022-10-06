@@ -42,8 +42,9 @@ def CRUDschedule(request,userId):
             try:
                 print(userId)
                 schedule_collection.replace_one({'userId':userId},request.data)
-            except:
-                return Response({"message": "Something went wrong", "status": Response.status_code})
+            except Exception as inst:
+
+                return Response({"message": inst, "status": Response.status_code})
 
             return Response({"message": "Schedule replaced into the DB!"})
 
