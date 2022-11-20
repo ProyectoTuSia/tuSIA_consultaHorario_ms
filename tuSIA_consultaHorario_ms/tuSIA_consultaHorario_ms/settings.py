@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'tuSIA_consultaHorario_db',
         'CLIENT': {
-            'host': 'mongodb://172.17.0.2:27017'
+            'host': 'mongodb://35.222.42.133:27017'
         }
     }
     # 'default': {
