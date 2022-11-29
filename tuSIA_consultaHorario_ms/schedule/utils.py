@@ -9,16 +9,16 @@ def get_db_handle(method):
 
     if method=='PUT':
         client = MongoClient(
-        'mongodb://34.152.30.169:27017')
+        'mongodb://10.162.0.5:27017')
         print("the method is"+method)
-        print("IP 34.152.30.169")
+        print("IP 10.162.0.5:27017")
         # replicaSet='rs0',
         # readPreference='secondary')
     else:
         client = MongoClient(
-        'mongodb://35.203.48.229:27017')
+        'mongodb://10.162.0.6:27017')
         print("the method is"+method)
-        print("IP 35.203.48.229")
+        print("IP 10.162.0.6")
 
         # replicaSet='rs0',
         # readPreference='secondary')

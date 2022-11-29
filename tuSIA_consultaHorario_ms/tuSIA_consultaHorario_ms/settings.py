@@ -88,14 +88,14 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'tuSIA_consultaHorario_db',
         'CLIENT': {
-            'host': 'mongodb://34.152.30.169:27017'
+            'host': 'mongodb://10.162.0.5:27017'
         }
     },
     "replica_1": {
         'ENGINE': 'djongo',
         'NAME': 'tuSIA_consultaHorario_db',
         'CLIENT': {
-            'host': 'mongodb://35.203.48.229:27017'
+            'host': 'mongodb://10.162.0.6:27017'
         }
     }
 }
