@@ -88,21 +88,18 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'tuSIA_consultaHorario_db',
         'CLIENT': {
-            'host': 'mongodb://35.222.42.133:27017'
+            'host': 'mongodb://34.152.30.169:27017'
+        }
+    },
+    "replica_1": {
+        'ENGINE': 'djongo',
+        'NAME': 'tuSIA_consultaHorario_db',
+        'CLIENT': {
+            'host': 'mongodb://35.203.48.229:27017'
         }
     }
-    # 'default': {
-    #     'ENGINE': 'djongo',
-    #     'CLIENT':{
-    #         'name': 'tuSIA_consultaHorario_db',
-    #         'host': 'mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority',
-    #        "username": 'jurinconor',
-    #        "password": '0phnex3dqApDiMuP',
-    #        "authMechanism": "SCRAM-SHA-1",
-    #     },
-    # }
-
 }
+DATABASE_ROUTERS = ['tuSIA_consultaHorario_ms.authRouter.AuthRouter']
 
 
 # Password validation

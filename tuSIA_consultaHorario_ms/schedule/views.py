@@ -21,13 +21,18 @@ def CRUDschedule(request,userId):
     # schedule_collecion = client["tuSIA_consultaHorario_db"]["schedule"]
 
     # remote connection
-    utils_data = utils.get_db_handle()
-    schedule_collection = utils_data[1]
-    client = utils_data[2]
+    # utils_data = utils.get_db_handle()
+    # schedule_collection = utils_data[1]
+    # client = utils_data[2]
 
-    schedule_data = schedule_collection.find_one({'userId' : userId})
+    # schedule_data = schedule_collection.find_one({'userId' : userId})
 
     if request.method == 'PUT':
+        utils_data = utils.get_db_handle('PUT')
+        schedule_collection = utils_data[1]
+        client = utils_data[2]
+
+        schedule_data = schedule_collection.find_one({'userId' : userId})
 
         if not(schedule_data):
             try:
@@ -51,6 +56,11 @@ def CRUDschedule(request,userId):
             return Response({"message": "Schedule replaced into the DB!"})
 
     if request.method == 'GET':
+        utils_data = utils.get_db_handle('GET')
+        schedule_collection = utils_data[1]
+        client = utils_data[2]
+
+        schedule_data = schedule_collection.find_one({'userId' : userId})
 
         # schedule_serializer = ScheduleSerializer(schedule_data)
         schedule_json = json.loads(json_util.dumps(schedule_data))
