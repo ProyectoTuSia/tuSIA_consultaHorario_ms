@@ -4,7 +4,7 @@ from pymongo import MongoClient
 def get_db_handle():
 #def get_db_handle(db_name, host, port, username, password):
 
-#  client = MongoClient('mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority')
+#  client = MongoClient('mongodb+srv://jurinconor:odioreact21@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority')
  client = MongoClient('mongodb://10.162.0.5:27017')
 #define DB name
 

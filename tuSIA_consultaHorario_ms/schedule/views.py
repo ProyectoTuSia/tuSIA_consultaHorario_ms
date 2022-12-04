@@ -54,4 +54,5 @@ def CRUDschedule(request,userId):
 
         # schedule_serializer = ScheduleSerializer(schedule_data)
         schedule_json = json.loads(json_util.dumps(schedule_data))
+        print(schedule_json)
         return Response({'data':schedule_json})

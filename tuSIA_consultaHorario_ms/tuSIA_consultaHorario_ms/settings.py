@@ -95,12 +95,12 @@ DATABASES = {
     #     'ENGINE': 'djongo',
     #     'CLIENT':{
     #         'name': 'tuSIA_consultaHorario_db',
-    #         'host': 'mongodb+srv://jurinconor:0phnex3dqApDiMuP@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority',
+    #         'host': 'mongodb+srv://jurinconor:odioreact21@cluster0.eb4hb.mongodb.net/?retryWrites=true&w=majority',
     #        "username": 'jurinconor',
     #        "password": '0phnex3dqApDiMuP',
     #        "authMechanism": "SCRAM-SHA-1",
     #     },
-    # }
+    # }   
 
 }
 
